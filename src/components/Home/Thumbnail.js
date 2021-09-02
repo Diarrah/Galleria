@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Thumbnail = ({ thumbnail: { name, artist, images } }) => {
+const Thumbnail = ({ viewport, thumbnail: { name, artist, images } }) => {
+
     return ( 
-        <div className="thumbnail">
-            <h1 className="thumbnail__title">{name}</h1>
-            <h2 className="thumbnail__artist">{artist.name}</h2>
-        </div>
+        <Link to={`/gallery/${name.replace(/\s+/g, '-').toLowerCase()}`}>
+            <div className="thumbnail">
+                <h1 className="thumbnail__title">{name}</h1>
+                <h2 className="thumbnail__artist">{artist.name}</h2>
+            </div>
+        </Link>
     )
 }
 
