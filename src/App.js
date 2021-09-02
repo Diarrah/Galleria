@@ -30,7 +30,7 @@ const App = () => {
                 <Header />
                 <Switch>
                     <Route 
-                        exact path="/"
+                        exact path={["/", "/gallery"]}
                         render={(props) => (
                             <Home {...props} thumbnails={thumbnails} viewport={viewport} />
                         )}
